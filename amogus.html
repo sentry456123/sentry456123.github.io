@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMOGUS</title>
+
+    <script>
+        let tick = 0;
+        setInterval(step, 1000 / 60);
+
+        function step() {
+            let amogus = document.getElementById("amogus");
+            amogus.style.width = tick + "px";
+            amogus.style.height = tick + "px";
+
+            tick++;
+        }
+    </script>
+</head>
+<body>
+    <img id="amogus" src="amogus.webp" width="0" height="0">
+
+    <audio autoplay loop controls src="amogus.ogg"></audio>
+</body>
+</html>
