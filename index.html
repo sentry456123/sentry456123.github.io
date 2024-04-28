@@ -45,6 +45,8 @@
         function step() {
             spin();
             bounce();
+
+            tick++;
         }
 
         function spin() {
@@ -54,8 +56,6 @@
         }
 
         function bounce() {
-
-
             let youtube = document.getElementById("youtube");
             youtube.style.transform = "rotate(" + (tick % 360) + "deg)";
 
@@ -129,13 +129,8 @@
 
                     <br><br><br>
                     <h1>
-                        <p>...<span class="more-info"><a href="easteregg.html"><img src="sentry.webp" width="60" height="60"><a href="amogus.html"><img src="amogus.webp" width="60" height="60"></span></p>
+                        <p>...<span class="more-info"><a href="easteregg.html"><img src="sentry.webp" width="60" height="60"><a href="amogus.html"><img src="amogus.webp" width="60" height="60"><a href="chicken.html"><img src="chicken.webp" width="60" height="60"></span></p>
                     </h1>
-
-                    <br><br><br><br><br><br>
-
-                    <audio id="bgm" autoplay loop controls src="bgm.ogg"></audio>
-                    <h3>Music: Zalza - The Original 2204355 Chicken Man Song</h3>
         </div>
 
     </div>

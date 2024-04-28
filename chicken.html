@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            border: 0px;
+        }
+
+        .bgm {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <img id="sentry" src="sentry.webp" width="300" height="300" hidden>
+    <img id="chicken" src="chicken.webp" width="50" height="50" hidden>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const sentry = document.getElementById("sentry");
+        const chicken = document.getElementById("chicken");
+        let cOffset = 0;
+
+        let hintNeeded = true;
+
+        setInterval(draw, 1000 / 60);
+
+        function drawRotatedImage(image, x, y, angle) {
+            var width = image.width;
+            var height = image.height;
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.drawImage(image, -width / 2, -height / 2, width, height);
+            ctx.rotate(-angle);
+            ctx.translate(-x, -y);
+        }
+
+        function draw() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const inc = 10;
+
+            for (let x = 0; x < canvas.width; x += inc) {
+                let h = x / canvas.width * 360;
+                ctx.fillStyle = `hsl(${Math.abs(h - cOffset) % 360}, 100%, 50%)`;
+                ctx.fillRect(x - inc, 0, x, canvas.height);
+
+            }
+
+            var x = canvas.width / 2 + Math.sin(cOffset / 40) * 30;
+            var y = canvas.height / 2;
+            var angle = Math.sin(cOffset / 40) / 4;
+            drawRotatedImage(sentry, x, y, angle);
+
+            x = canvas.width / 2 - 150;
+            y = canvas.height / 2 + Math.sin(cOffset / 40) * 30;
+            angle = 90 / 180 * 3.14;
+            drawRotatedImage(chicken, x, y, angle);
+
+            x = canvas.width / 2 + 150;
+            y = canvas.height / 2 - Math.sin(cOffset / 40) * 30;
+            angle = 90 / 180 * 3.14;
+            drawRotatedImage(chicken, x, y, angle);
+
+            sentry.x = canvas.width / 2;
+            sentry.y = canvas.height / 2;
+
+            if (hintNeeded) {
+                ctx.font = "48px serif";
+                ctx.fillText("TURN ON MUSIC", 350, 50);
+            }
+
+            cOffset += 5;
+        }
+
+        function hideHint() {
+            hintNeeded = false;
+            var bgm = document.getElementById("bgm");
+            bgm.controls = false;
+        }
+    </script>
+    <audio id="bgm" class="bgm" preload="auto" autoplay src="bgm.ogg" controls onplay="hideHint();" loop></audio> 
+    Music: Zalza - The Original 2204355 Chicken Man Song
+</body>
+
+</html>
