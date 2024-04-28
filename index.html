@@ -37,6 +37,8 @@
     </style>
 
     <script>
+        document.getElementById("bgm").play();
+
         let tick = 0;
         setInterval(step, 1000 / 60);
 
@@ -130,7 +132,8 @@
 
                     <br><br><br><br><br><br>
 
-                    <audio autoplay loop controls src="bgm.ogg"></audio>
+                    <audio id="bgm" autoplay loop controls src="bgm.ogg"></audio>
+                    <h3>Music: Zalza - The Original 2204355 Chicken Man Song</h3>
         </div>
 
     </div>
