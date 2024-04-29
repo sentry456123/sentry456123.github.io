@@ -15,6 +15,21 @@
             display: block;
             margin: auto;
             border: 0px;
+
+            background: repeating-linear-gradient(-90deg, red 0%, yellow 7.14%, lime, 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+            background-size: 100vw 100vw;
+
+            animation: slide 1s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                background-position-x: 0vw;
+            }
+
+            to {
+                background-position-x: 100vw;
+            }
         }
 
         .bgm {
@@ -55,13 +70,6 @@
             canvas.height = window.innerHeight;
 
             const inc = canvas.width / 300;
-
-            for (let x = 0; x < canvas.width; x += inc) {
-                let h = x / canvas.width * 360;
-                ctx.fillStyle = `hsl(${Math.abs(h - cOffset) % 360}, 100%, 50%)`;
-                ctx.fillRect(x - inc, 0, x, canvas.height);
-
-            }
 
             var x = canvas.width / 2 + Math.sin(cOffset / 40) * 30;
             var y = canvas.height / 2;

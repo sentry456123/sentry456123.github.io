@@ -14,6 +14,74 @@
             src: url('pixelsquare.ttf');
         }
 
+        .sentry {
+            animation: rotate 3s linear infinite;
+        }
+
+        .youtube {
+            animation: rotate 3s linear infinite;
+        }
+
+        .tiktok {
+            animation: rotateCounterClockwise 3s linear infinite;
+        }
+
+        .twitter {
+            animation: rotate 3s linear infinite;
+        }
+
+        .github {
+            animation: rotateCounterClockwise 3s linear infinite;
+        }
+
+        .twitch {
+            animation: rotate 3s linear infinite;
+        }
+
+        .itchio {
+            animation: rotateCounterClockwise 3s linear infinite;
+        }
+
+        .kofi {
+            animation: rotate 3s linear infinite;
+        }
+
+        .discord {
+            animation: bounce 0.1s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateCounterClockwise {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: scaleY(0%);
+            }
+            50% {
+                transform: scaleY(100%);
+            }
+            to {
+                transform: scaleY(0%);
+            }
+        }
+
         h1 {
             font-family: PixelSquare;
             color: lime;
@@ -38,51 +106,6 @@
         }
     </style>
 
-    <script>
-        let tick = 0;
-        setInterval(step, 1000 / 60);
-
-        function step() {
-            spin();
-            bounce();
-
-            tick++;
-        }
-
-        function spin() {
-            let image = document.getElementById("sentry");
-            tick += 1;
-            image.style.transform = "rotate(" + (tick % 360) + "deg)";
-        }
-
-        function bounce() {
-            let youtube = document.getElementById("youtube");
-            youtube.style.transform = "rotate(" + (tick % 360) + "deg)";
-
-            let tiktok = document.getElementById("tiktok");
-            tiktok.style.transform = "rotate(" + (-tick % 360) + "deg)";
-
-            let twitter = document.getElementById("twitter");
-            twitter.style.transform = "rotate(" + (tick % 360) + "deg)";
-
-            let github = document.getElementById("github");
-            github.style.transform = "rotate(" + (-tick % 360) + "deg)";
-
-            let twitch = document.getElementById("twitch");
-            twitch.style.transform = "rotate(" + (tick % 360) + "deg)";
-
-            let itchio = document.getElementById("itchio");
-            itchio.style.transform = "rotate(" + (-tick % 360) + "deg)";
-
-            let kofi = document.getElementById("kofi");
-            kofi.style.transform = "rotate(" + (tick % 360) + "deg)";
-
-            let discord = document.getElementById("discord");
-            discord.style.height = Math.sin(tick) * 60 + "px";
-        }
-
-    </script>
-
 </head>
 
 <body>
@@ -90,15 +113,17 @@
     <div style="background-color: black;">
 
         <div style="text-align: center;">
-            <img id="sentry" alt="SENTRY" src="sentry.webp">
+            <img class="sentry" id="sentry" alt="SENTRY" src="sentry.webp">
 
             <br><br><br>
 
             <h1>INTRODUCTION</h1>
             <h3>Hi, my name is Sentry456123</h3>
             <h3>I am a YouTuber, Shitposter and a C/C++ Programmer</h3>
+            <h3><a href="lore.html">More info</a></h3>
 
             <br><br><br>
+
 
             <h1>Here are some</h1>
             <h3 style="font-family:'Courier New'">
@@ -117,14 +142,14 @@
 
             <h1>You can find me on...</h1><br>
 
-            <a href="https://www.youtube.com/@SENTRY456123"><img id="youtube" src="youtube.webp" width="60" height="60"></a>
-            <a href="https://www.tiktok.com/@sentry456123"><img id="tiktok" src="tiktok.webp" width="60" height="60"></a>
-            <a href="https://twitter.com/sentry456123"><img id="twitter" src="twitter.webp" width="60" height="60"></a>
-            <a href="https://github.com/sentry456123"><img id="github" src="github.webp" width="60" height="60"></a>
-            <a href="https://www.twitch.tv/sentry456123"><img id="twitch" src="twitch.webp" width="60" height="60"></a>
-            <a href="https://sentry456123.itch.io"><img id="itchio" src="itchio.webp" width="60" height="60"></a>
-            <a href="https://ko-fi.com/sentry456123"><img id="kofi" src="kofi.webp" width="60" height="60"></a>
-            <a href="https://discord.gg/uwDHaZ5j7a"><img id="discord" src="discord.webp" width="60" height="60"></a>
+            <a href="https://www.youtube.com/@SENTRY456123"><img class="youtube" id="youtube" src="youtube.webp" width="60" height="60"></a>
+            <a href="https://www.tiktok.com/@sentry456123"><img class="tiktok" id="tiktok" src="tiktok.webp" width="60" height="60"></a>
+            <a href="https://twitter.com/sentry456123"><img class="twitter" id="twitter" src="twitter.webp" width="60" height="60"></a>
+            <a href="https://github.com/sentry456123"><img class="github" id="github" src="github.webp" width="60" height="60"></a>
+            <a href="https://www.twitch.tv/sentry456123"><img class="twitch" id="twitch" src="twitch.webp" width="60" height="60"></a>
+            <a href="https://sentry456123.itch.io"><img class="itchio" id="itchio" src="itchio.webp" width="60" height="60"></a>
+            <a href="https://ko-fi.com/sentry456123"><img class="kofi" id="kofi" src="kofi.webp" width="60" height="60"></a>
+            <a href="https://discord.gg/uwDHaZ5j7a"><img class="discord" id="discord" src="discord.webp" width="60" height="60"></a>
 
             <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
             <script>
