@@ -49,6 +49,11 @@
             display: inline-block;
         }
 
+        body:after {
+            position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+            content: url(oldjapan.webp);
+        }
+
         .japan:hover {
             display: none;
             content: url(oldjapan.webp);
