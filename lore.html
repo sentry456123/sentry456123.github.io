@@ -1,1 +1,110 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More about Sentry456123</title>
+
+    <style>
+        @font-face {
+            font-family: PixelSquare;
+            src: url('pixelsquare.ttf');
+        }
+
+        body {
+            background-color: black;
+            font-family: PixelSquare;
+            color: lime;
+        }
+
+        .title {
+            font-size: 50px;
+            text-align: center;
+
+            background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, lime, 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+            background-size: 20vw 20vw;
+
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+
+            animation: slide 1s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                background-position-x: 0%;
+            }
+
+            to {
+                background-position-x: 20vw;
+            }
+        }
+        
+        .more-info {
+            display: none;
+        }
+
+        .japan-desc:hover .more-info {
+            display: inline-block;
+        }
+
+        .japan:hover {
+            display: none;
+            content: url(oldjapan.webp);
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">HOME</a>
+
+    <h1 class="title">SENTRY LORE</h1>
+    
+    <h1>THe meaning of this name</h1>
+    <p>I looked at my English dictionary, I found the word and I thought it was cool</p>
+    <br><br>
+
+    <h1>Nationality</h1>
+    <p class="japan-desc">Japan<span class="more-info"> (American Colony)</span></p>
+    <div style="text-align: center;">
+        <img class="japan" src="japan.webp" width="30%">
+    </div>
+    <br><br>
+
+    <h1>Age</h1>
+    <p>My childhood is Flash games</p>
+    <br><br>
+
+    <h1>Gender</h1>
+    <p>Stick and balls</p>
+    <br><br>
+
+    <h1>Education</h1>
+    <p>I dropped out of high school.</p>
+    <br><br>
+
+    <h1>CPU</h1>
+    <p>i7 10870H</p>
+    <br><br>
+
+    <h1>GPU</h1>
+    <p>RTX 3060 Laptop</p>
+    <br><br>
+
+    <h1>Headphone</h1>
+    <p>AudioTechnica ATH-AVC500</p>
+    <br><br>
+
+    <h1>Preferred Linux distro</h1>
+    <p>Debian</p>
+    <br><br>
+
+    <h1>Favorite programming language</h1>
+    <p>C/C++</p>
+    <br><br>
+
+</body>
+
+</html>
