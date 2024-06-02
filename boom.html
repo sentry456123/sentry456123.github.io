@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SENTRY Explosion</title>
+    <link rel="icon" href="sentry.webp">
+    <meta name="SENTRY Explosion" content="SENTRY Explosion" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <style>
+        #musicButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+            text-align-last: center;
+            width: auto;
+            padding: 10px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        #sentry {
+            width: 400px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #sentry:active {
+            transform: scale(1.1);
+        }
+
+        #gif-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #gif {
+            width: 1000px;
+        }
+
+        #Compteur {
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: center;
+            font-family: cursive;
+        }
+    </style>
+    <audio id="music" src="music.ogg" autoplay></audio>
+    <button id="musicButton" onclick="pauseMusique()">🔊</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const 娜伊艾哦艾儿 = document.getElementById('sentry');
+            const 比勒勒开 = document.getElementById('boom');
+            const 弗艾艾西勒艾哦诶艾艾伊艾 = document.getElementById('gif-container');
+            const 西杰艾西艾西勒屁艾哦迪艾吉 = document.getElementById('Compteur');
+
+            let 西杰艾西艾西勒屁艾哦 = localStorage.getItem("count") || 0;
+            西杰艾西艾西勒屁艾哦迪艾吉.textContent = `You have blown up SENTRY : ${西杰艾西艾西勒屁艾哦}`;
+
+            娜伊艾哦艾儿.addEventListener('click', () => {
+                比勒勒开.play();
+                弗艾艾西勒艾哦诶艾艾伊艾.style.display = 'block';
+                西杰艾西艾西勒屁艾哦++;
+                localStorage.setItem("count", 西杰艾西艾西勒屁艾哦);
+                西杰艾西艾西勒屁艾哦迪艾吉.textContent = `You have blown up SENTRY : ${西杰艾西艾西勒屁艾哦}`;
+                setTimeout(() => {
+                    弗艾艾西勒艾哦诶艾艾伊艾.style.display = 'none';
+                }, 1500);
+            });
+        });
+
+        function pauseMusique() {
+            var 开屁娜艾西 = document.getElementById('music');
+            if (开屁娜艾西.paused) {
+                开屁娜艾西.play();
+                document.getElementById('musicButton').innerText = '🔇';
+            } else {
+                开屁娜艾西.pause();
+                document.getElementById('musicButton').innerText = '🔊';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <img src="sentry.webp" id="sentry" alt="sentry">
+        <div id="Compteur">You have blown up SENTRY : 0</div>
+    </div>
+    <div class="Audio">
+        <audio id="boom" src="boom.ogg"></audio>
+    </div>
+    <div id="gif-container">
+        <img src="boom.gif" id="gif" alt="gif">
+    </div>
+</body>
+
+</html>
