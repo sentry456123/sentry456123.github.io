@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Analysis</title>
+
+    <style>
+        @font-face {
+        font-family: PixelSquare;
+        src: url('pixelsquare.ttf');
+        }
+
+        body {
+            background-color: black;
+            font-family: PixelSquare;
+            color: lime;
+        }
+
+        .title {
+            font-size: 50px;
+            text-align: center;
+
+            background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, lime, 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+            background-size: 20vw 20vw;
+
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+
+            animation: slide 1s linear infinite;
+        }
+        @keyframes slide {
+            from {
+                background-position-x: 0%;
+            }
+
+            to {
+                background-position-x: 20vw;
+            }
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="title">C programming language</h1>
+    
+    <h2>The power of UB (Undefined Behavior)</h2>
+    C has something called UB.
+    
+    For example, calling <code>exit()</code> twice causes UB.
+
+    (This page is under construction)
+
+</body>
+</html>
