@@ -137,11 +137,60 @@
     p:hover .more-info {
       display: inline-block;
     }
+
+    #lightMode {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      font-family: Acme;
+      color: lime;
+      background-color: black;
+      border-color: lime;
+    }
+
+    #cursorGlow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      pointer-events: none;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255,255,200,0.9) 0%, rgba(255,255,200,0.4) 40%, rgba(255,255,200,0) 70%);
+      mix-blend-mode: screen;
+      z-index: 9999;
+    }
+
+    body.light-mode #cursorGlow {
+      opacity: 1;
+    }
+
+    body.light-mode {
+      cursor: none;
+    }
   </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      const button = document.getElementById("lightMode");
+      const glow = document.getElementById("cursorGlow");
+      button.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+      });
+      window.addEventListener("mousemove", event => {
+        glow.style.left = event.clientX + "px";
+        glow.style.top = event.clientY + "px";
+      });
+    });
+  </script>
 
 </head>
 
 <body>
+
+  <button id="lightMode">Light Mode</button>
+  <div id="cursorGlow"></div>
 
   <img class="banner" alt="EPIC BANNER" src="banner.webp">
 
@@ -255,5 +304,35 @@
   
 
 </body>
+
+<script>
+
+function niceWord() {
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣤⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀    ");
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠟⠉⠉⠉⠉⠉⠉⠉⠙⠻⢶⣄⠀⠀⠀⠀⠀   "             );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⠀⠙⣷⡀⠀⠀  "            );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡟⠀⣠⣶⠛⠛⠛⠛⠛⠛⠳⣦⡀⠀⠘⣿⡄⠀⠀   "         );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠁⠀⢹⣿⣦⣀⣀⣀⣀⣀⣠⣼⡇⠀⠀⠸⣷⠀⠀   "         );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⠀⠀⠀⠉⠛⠿⠿⠿⠿⠛⠋⠁⠀⠀⠀⠀⣿     "       );
+  console.log("      ⠀⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡇⠀   "         );
+  console.log("      ⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀   "         );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⠀⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀   "         );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⢸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠀   "         );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⣿⠀  "          );
+  console.log("⠀⠀⠀⠀⠀⠀⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⣿⠀  "          );
+  console.log("⠀⠀⠀⠀⠀⠀⢰⣿⠀⠀⠀⠀⣠⡶⠶⠿⠿⠿⠿⢷⣦⠀⠀⠀⠀⠀  ⣿⠀   "         );
+  console.log("⠀⠀⣀⣀⣀⠀⣸⡇⠀⠀⠀⠀⣿⡀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⣿⠀   "         );
+  console.log("⣠⡿⠛⠛⠛⠛⠻⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⠀ ⠀⣿⠀  "          );
+  console.log("⢻⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⡟⠀⠀⢀⣤⣤⣴⣿⠀⠀⠀⠀⠀⠀  ⠀⣿⠀ "           );
+  console.log("⠈⠙⢷⣶⣦⣤⣤⣤⣴⣶⣾⠿⠛⠁⢀⣶⡟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀   "         );
+  console.log("             ⠀⠀⠀⠀⠈⣿⣆⡀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡾⠃⠀"            );
+  console.log("           ⠀⠀⠀⠀⠀⠀⠈⠛⠻⢿⣿⣾⣿⡿⠿⠟⠋⠁⠀⠀⠀ "           );
+}
+
+setInterval(() => {
+  niceWord();
+}, 1000);
+
+</script>
 
 </html>
